@@ -1,20 +1,20 @@
 package locations;
 
 public class Room extends Location {
-	private int number;
+    private int number;
 
-	public Room(int number) {
-		this.number = number;
-		locationID = new LocationID(number);
-	}
+    public Room(int number) {
+        this.number = number;
+        locationID = new LocationID(number);
+    }
 
-	public void setFloor(LocationID floor) {
-		locationID = new LocationID(floor);
-		locationID.setRoomNo(number);
-	}
+    public void setFloor(LocationID floor) {
+        locationID = new LocationID(floor);
+        locationID.setRoomNo(number);
+    }
 
-	@Override
-	public String opis() {
+    @Override
+    public String opis() {
 		/*StringBuilder sB = new StringBuilder();
 		sB.append(" Floor number: " + number + "\t[" + locationID + "]\n");
 		for (Room room : rooms) {
@@ -23,7 +23,7 @@ public class Room extends Location {
 		return sB.toString();*/
 
 
-		return "    Room number: " + number + "\t[" + locationID + "]\n";
-	}
+        return "    Room number: " + number + "\t[" + locationID + "]\n";
+    }
 
 }

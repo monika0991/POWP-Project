@@ -1,21 +1,16 @@
 package locations;
 
-public class BuildingFactory {
-	private int counter = 0;
-	public Building create(int numberOfFloors, int numberOfRooms){
-		counter++;
-		Building building = new Building(counter);
-		for (int i = 1; i<=numberOfFloors; i++){
-			Floor floor = new Floor(i);
-			for (int j = 1; j<=numberOfRooms; j++){
-				Room room = new Room(j);
-				floor.addRoom(room);
-			}
-			building.addFloor(floor);
-		}
+import factory.AbstractFactory;
 
-		return building;
-	}
+public class BuildingFactory implements AbstractFactory<IBuilding> {
 
-
+    @Override
+    public IBuilding create(String buildingType) {
+        if (buildingType.equals("skyscrapper")) {
+            return Skyscraper.newSkyscraper();
+        } else if (buildingType.equals("house")) {
+            return House.newHouse();
+        }
+        return null;
+    }
 }
