@@ -29,4 +29,14 @@ public class Skyscraper implements IBuilding {
     public void addFloor(Floor floor) {
         building.addFloor(floor);
     }
+
+    @Override
+    public void addRoom(int floorNumber) {
+        building.addRoom(floorNumber);
+    }
+
+    @Override
+    public Floor getFloor(int floorNumber) {
+        return building.getFloor(floorNumber);
+    }
 }

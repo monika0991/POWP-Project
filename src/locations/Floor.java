@@ -24,6 +24,10 @@ public class Floor extends Location {
         rooms.add(room);
     }
 
+    public int getNumberOfRooms() {
+        return rooms.size();
+    }
+
     @Override
     public String opis() {
         StringBuilder sB = new StringBuilder();

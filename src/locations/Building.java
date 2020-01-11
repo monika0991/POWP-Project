@@ -29,10 +29,26 @@ public class Building extends Location implements IBuilding {
     }
 
     @Override
+    public Floor getFloor(int floorNumber) {
+        return floors.get(floorNumber);
+    }
+
+    @Override
     public void addFloor(Floor floor) {
         floor.setBuilding(locationID);
         locationID.setBuildingNo(numberB);
         floors.add(floor);
+    }
+
+    @Override
+    public void addRoom(int floorNumber) {
+        Floor floor = getFloor(floorNumber);
+        if (floor == null) {
+            return;
+        }
+        int newRoomNumber = floor.getNumberOfRooms() + 1;
+        Room newRoom = new Room(newRoomNumber);
+        floor.addRoom(newRoom);
     }
 
     @Override

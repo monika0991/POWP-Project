@@ -6,7 +6,7 @@ public class BuildingFactory implements AbstractFactory<IBuilding> {
 
     @Override
     public IBuilding create(String buildingType) {
-        if (buildingType.equals("skyscrapper")) {
+        if (buildingType.equals("skyscraper")) {
             return Skyscraper.newSkyscraper();
         } else if (buildingType.equals("house")) {
             return House.newHouse();

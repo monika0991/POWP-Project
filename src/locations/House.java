@@ -27,7 +27,16 @@ public class House implements IBuilding {
     }
 
     @Override
+    public Floor getFloor(int floorNumber) {
+        return building.getFloor(floorNumber);
+    }
+
+    @Override
     public void addFloor(Floor floor) {
         building.addFloor(floor);
+    }
+    @Override
+    public void addRoom(int floorNumber) {
+        building.addRoom(floorNumber);
     }
 }
